@@ -1,34 +1,72 @@
-<div layout="vertical" layout-fill>
+<div id="wrapper" layout="column" ng-cloak>
+    
+    <md-toolbar id="toolbar">
+            <div class="md-toolbar-tools">
+                
+                <md-button class="md-icon-button" aria-label="Menu" ng-click="main.toggleMenu()" ng-hide="main.isMenuVisible">
+                    <md-icon md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <h2>
+                <span>Webcorp 1.0</span>
+                </h2>
+                <span flex></span>
+                <md-switch class="md-primary" ng-model="main.isMenuVisible"> </md-switch>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon md-font-library="material-icons" style="color: greenyellow;">favorite</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-library="material-icons" style="color: greenyellow;">search</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-library="material-icons" style="color: greenyellow;">mail</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-library="material-icons" style="color: greenyellow;">alarm</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-library="material-icons" style="color: greenyellow;">work</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-library="material-icons" style="color: greenyellow;">settings</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-library="material-icons" style="color: greenyellow;">message</md-icon>
+                </md-button>
+            </div>
+    </md-toolbar>
+     <section layout="row" flex>
+         
+        <admin-sidenav is-visible="main.isMenuVisible"></admin-sidenav>
+     
+   
+        <md-content flex layout-padding>
+            <header>
+            <!--<acme-navbar creation-date="main.creationDate" ></acme-navbar>-->
+            </header>
+            <section class="jumbotron">
+            <h1>'Allo, 'Allo!</h1>
+            <p class="lead">
+                <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+                Always a pleasure scaffolding your apps.
+            </p>
+            <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
+            <p>
+                With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+            </p>
+            </section>
 
-  <md-content>
-    <header>
-      <acme-navbar creation-date="main.creationDate" ></acme-navbar>
-    </header>
-
-    <section class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
-      <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
-      </p>
-      <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
-      <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-      </p>
+            <div class="techs" layout-align="center">
+            <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+                <md-card-content>
+                <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+                <h3 class="md-title">{{ awesomeThing.title }}</h3>
+                <p>{{ awesomeThing.description }}</p>
+                </md-card-content>
+                <div class="md-action-buttons">
+                <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
+                </div>
+            </md-card>
+            </div>
+        </md-content>
     </section>
-
-    <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-card-content>
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-        </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
-        </div>
-      </md-card>
-    </div>
-  </md-content>
-
 </div>

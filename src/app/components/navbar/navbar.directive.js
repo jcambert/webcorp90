@@ -4,7 +4,7 @@
   angular
     .module('webcorp90')
     .directive('acmeNavbar', acmeNavbar)
-	
+
 
   /** @ngInject */
   function acmeNavbar() {
@@ -27,9 +27,9 @@
 
       // "vm.creation" is avaible by directive option "bindToController: true"
       vm.relativeDate = moment(vm.creationDate).fromNow();
-	 /* vm.fixing = function(){
-		alert('fixed or floated');
-		}*/
+     /* vm.fixing = function(){
+ 
+     }*/
     }
   }
 

@@ -1,4 +1,4 @@
-(function() {
+(function(angular) {
   'use strict';
 
   angular
@@ -6,14 +6,15 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($log,$timeout, webDevTec, toastr,$mdUtil,$mdSidenav) {
     var vm = this;
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1454180974110;
     vm.showToastr = showToastr;
-	
+	vm.isMenuVisible=true;
+    vm.toggleMenu = buildToggle('adminsidenav');
     activate();
 
     function activate() {
@@ -35,5 +36,17 @@
         awesomeThing.rank = Math.random();
       });
     }
+    
+    function buildToggle(navID) {
+        var debounceFn =  $mdUtil.debounce(function(){
+                $mdSidenav(navID)
+                .toggle()
+                .then(function () {
+                    $log.debug("toggle " + navID + " is done");
+                });
+            },300);
+
+        return debounceFn;
+        }
   }
-})();
+})(angular);
