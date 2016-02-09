@@ -1,0 +1,13 @@
+<ul class="menu">
+    <li ss-style-color="{'border-bottom-color': 'primary.600'}" ng-repeat="section in vm.menu.sections" ng-if="!section.hidden">
+        <h2 ss-style-color="{'color': 'primary.A100'}" class="menu-heading md-subhead" ng-if="section.type === 'heading'">{{section.name}}</h2>
+        <admin-sidenav-menu-link section="section" ng-if="section.type === 'link'"></admin-sidenav-menu-link>
+        <admin-sidenav-menu-toggle section="section" ng-if="section.type === 'toggle'"></admin-sidenav-menu-toggle>
+        <ul ng-if="section.children">
+            <li ng-repeat="child in section.children" ng-if="!child.hidden">
+                <admin-sidenav-menu-link section="child" ng-if="child.type === 'link'"></admin-sidenav-menu-link>
+                <admin-sidenav-menu-toggle section="child" ng-if="child.type === 'toggle'"></admin-sidenav-menu-toggle>
+            </li>
+        </ul>
+    </li>
+</ul>

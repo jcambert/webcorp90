@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($log,$timeout, webDevTec, toastr,$mdUtil,$mdSidenav) {
+  function MainController($log,$timeout, webDevTec, toastr,$mdUtil,$mdSidenav,adminSidenav) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -15,6 +15,8 @@
     vm.showToastr = showToastr;
 	vm.isMenuVisible=true;
     vm.toggleMenu = buildToggle('adminsidenav');
+    vm.menu = adminSidenav;
+    //console.dir(vm.menu);
     activate();
 
     function activate() {

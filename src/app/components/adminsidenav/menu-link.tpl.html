@@ -1,0 +1,11 @@
+<md-button
+   ss-style-color="{'background-color': (isSelected(section.state) || $state.includes(section.state)) ? 'primary.800': 'primary.default'}"' +
+   class="md-raised md-primary"
+   ui-sref="{{section.state}}"
+   ng-click="focusSection(section)">
+   <span ng-if="section.icon" class="{{section.icon}}">&nbsp;&nbsp;</span>{{section.name}}
+   <span class="md-visually-hidden"
+       ng-if="isSelected(section.state)">
+       current page
+   </span>
+</md-button>
