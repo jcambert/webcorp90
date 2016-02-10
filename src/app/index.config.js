@@ -30,10 +30,12 @@
                 children: [{
                     name: 'Toogle 1',
                     type: 'toggle',
+                    
                     pages: [{
                         id: 'toogle_1_link_1',
                         name: 'item 1',
-                        state: 'common.toggle1.item1'
+                        state: 'common.toggle1.item1',
+                        mdicon:'home'
                     }, {
                         id: 'toogle_1_link_2',
                         name: 'item 2',
