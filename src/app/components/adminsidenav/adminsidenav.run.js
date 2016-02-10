@@ -15,9 +15,10 @@
             '   class="md-raised md-primary"' +
             '   ui-sref="{{vm.section.state}}"\n' +
             '   ng-click="vm.focusSection(vm.section)">\n' +
-            '   <span ng-if="vm.section.faicon" class="fa fa-{{vm.section.faicon}} {{vm.section.fasize}}">&nbsp;&nbsp;</span>\n'+
+            '   <span ng-if="vm.section.faicon" class="fa fa-{{vm.section.faicon}} {{vm.section.fasize}}"></span>\n'+
             '   <md-icon ng-if="vm.section.mdicon" md-font-library="material-icons">{{vm.section.mdicon}}</md-icon>\n'+
-            '   {{vm.section.name}}\n' +
+            '   <span ng-if="vm.hasNoIcon(vm.section)" class="fa fa-facebook ">toto</span>\n'+
+            '   &nbsp;&nbsp;{{vm.section.name}}\n' +
             '   <span class="md-visually-hidden"\n' +
             '       ng-if="vm.isSelected(vm.section.state)">\n' +
             '       current page\n' +

@@ -349,8 +349,12 @@
             this.$state=$state;
             
             vm.hasIcon = function(page){
-                return page.faicon || page.mdicon;
-            }
+                $log.log(page);
+                
+                var result= page.faicon!=undefined || page.mdicon!=undefined;
+                $log.log(result);
+                return result;
+            } 
             
             vm.hasNoIcon = function(page){
                 return !vm.hasIcon(page);

@@ -35,12 +35,13 @@
                         id: 'toogle_1_link_1',
                         name: 'item 1',
                         state: 'common.toggle1.item1',
-                        mdicon:'home'
+                        faicon:'home',
+                       // mdicon:'home'
                     }, {
                         id: 'toogle_1_link_2',
                         name: 'item 2',
                         state: 'common.toggle1.item2',
-                        hidden: true
+                        //hidden: true
                     }, {
                         id: 'toogle_1_link_3',
                         name: 'item 3',
