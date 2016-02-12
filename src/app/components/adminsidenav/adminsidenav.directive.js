@@ -349,15 +349,25 @@
             this.$state=$state;
             
             vm.hasIcon = function(page){
-                $log.log(page);
+                //$log.log(page);
                 
                 var result= page.faicon!=undefined || page.mdicon!=undefined;
-                $log.log(result);
+                //$log.log(result);
                 return result;
             } 
             
             vm.hasNoIcon = function(page){
                 return !vm.hasIcon(page);
+            }
+            
+            vm.faSize = function(page){
+                if(page.faicon!=undefined){
+                    if(page.fasize !=undefined)
+                        return "fa-" + page.fasize;
+                    else
+                        return "fa-2x";
+                }
+                return "";
             }
         }
     }

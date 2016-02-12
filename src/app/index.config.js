@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig,$mdThemingProvider,adminSidenavSectionsProvider) {
+  function config($logProvider, toastrConfig,$mdThemingProvider,adminSidenavSectionsProvider,$mdIconProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -16,10 +16,13 @@
     toastrConfig.positionClass = 'toast-top-right';
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
-    
+
+    $mdIconProvider.fontSet('fa', 'fontawesome');
+
+
     $mdThemingProvider
         .theme('default')
-        .primaryPalette('blue', {
+        .primaryPalette('red', {
             'default': '700'
         });
     adminSidenavSectionsProvider.initTheme($mdThemingProvider);
@@ -35,12 +38,14 @@
                         id: 'toogle_1_link_1',
                         name: 'item 1',
                         state: 'common.toggle1.item1',
-                        faicon:'home',
-                       // mdicon:'home'
+                        //faicon:'home',
+                        fasize:'2x',
+                       mdicon:'home'
                     }, {
                         id: 'toogle_1_link_2',
                         name: 'item 2',
                         state: 'common.toggle1.item2',
+                        faicon:'fa-gear'
                         //hidden: true
                     }, {
                         id: 'toogle_1_link_3',
