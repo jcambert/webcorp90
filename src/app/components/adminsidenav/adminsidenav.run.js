@@ -15,12 +15,9 @@
             '   class="md-raised md-primary"' +
             '   ui-sref="{{vm.section.state}}"\n' +
             '   ng-click="vm.focusSection(vm.section)">\n' +
-            //' <a href="#"><i class="fa fa-gear"/></a>'+
-            '   <md-icon md-font-set="fa" >gear</md-icon>'+
-            '   <md-icon md-font-icon="{{vm.section.faicon}}" class="fa {{vm.faSize(vm.section)}}"></md-icon>'+
+            '   <md-icon md-font-set="fa fa-{{vm.section.faicon}} {{vm.faSize(vm.section)}}"></md-icon>'+
             '   <md-icon ng-if="vm.section.mdicon" md-font-library="material-icons">{{vm.section.mdicon}}</md-icon>\n'+
-            '   <span ng-if="vm.hasNoIcon(vm.section)" class="fa fa-facebook fa-2x fa-invisible"></span>\n'+
-            '   {{vm.section.name}}\n' +
+            '   &nbsp;&nbsp;&nbsp;{{vm.section.name}}\n' +
             '   <span class="md-visually-hidden"\n' +
             '       ng-if="vm.isSelected(vm.section.state)">\n' +
             '       current page\n' +

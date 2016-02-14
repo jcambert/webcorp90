@@ -38,14 +38,14 @@
                         id: 'toogle_1_link_1',
                         name: 'item 1',
                         state: 'common.toggle1.item1',
-                        //faicon:'home',
-                        fasize:'2x',
-                       mdicon:'home'
+                        faicon:'home',
+                        fasize:'2x'
+                       //mdicon:'home'
                     }, {
                         id: 'toogle_1_link_2',
                         name: 'item 2',
                         state: 'common.toggle1.item2',
-                        faicon:'fa-gear'
+                        faicon:'gear'
                         //hidden: true
                     }, {
                         id: 'toogle_1_link_3',
